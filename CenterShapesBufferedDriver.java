@@ -4,11 +4,11 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class CenterShapesDriver
+public class CenterShapesBufferedDriver
 {
 	public static void main(String[] args)
 	{
-		JFrame frame = new JFrame("Center Shapes");
+		JFrame frame = new JFrame("Center Shapes Buffered");
 		
 		// use a portion of the available device screen
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
