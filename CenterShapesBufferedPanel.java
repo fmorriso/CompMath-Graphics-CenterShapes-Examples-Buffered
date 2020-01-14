@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Graphics;
+import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.image.BufferedImage;
@@ -20,9 +21,9 @@ public class CenterShapesBufferedPanel extends JPanel
 
 		bufImage = new BufferedImage(MIN_WIDTH, MIN_HEIGHT, BufferedImage.TYPE_INT_RGB);
 		bufGraphics = bufImage.getGraphics();
-		
-		// listen for when this JPanel is resized 
-		this.addComponentListener(new ComponentListener()
+
+		// listen for when this JPanel is resized
+		this.addComponentListener(new ComponentAdapter()
 		{
 			@Override
 			public void componentResized(ComponentEvent e)
@@ -42,25 +43,8 @@ public class CenterShapesBufferedPanel extends JPanel
 					redrawBuffer();
 				}
 			}
-
-			@Override
-			public void componentHidden(ComponentEvent e)
-			{
-				// DON'T CARE
-			}
-
-			@Override
-			public void componentMoved(ComponentEvent e)
-			{
-				// DON'T CARE
-			}
-
-			@Override
-			public void componentShown(ComponentEvent e)
-			{
-				// DON'T CARE
-			}
 		});
+
 	}
 
 	private void redrawBuffer()
@@ -68,7 +52,7 @@ public class CenterShapesBufferedPanel extends JPanel
 		Container parent = getParent();
 		if (parent == null)
 		{
-			//System.out.println("redrawBuffer: getParent() returned null");
+			// System.out.println("redrawBuffer: getParent() returned null");
 			return;
 		}
 		int x = parent.getX();
