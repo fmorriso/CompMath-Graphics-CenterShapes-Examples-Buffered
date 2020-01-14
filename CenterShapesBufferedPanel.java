@@ -20,26 +20,27 @@ public class CenterShapesBufferedPanel extends JPanel
 
 		bufImage = new BufferedImage(MIN_WIDTH, MIN_HEIGHT, BufferedImage.TYPE_INT_RGB);
 		bufGraphics = bufImage.getGraphics();
-		//regenerate();
-
+		
+		// listen for when this JPanel is resized 
 		this.addComponentListener(new ComponentListener()
 		{
 			@Override
 			public void componentResized(ComponentEvent e)
 			{
-				//System.out.println("componentResized");
-				// get current size of parent container (because it may have been resized)
-				Container parent = getParent();				
-				int width = parent.getWidth();
-				int height = parent.getHeight();
+				// System.out.println("componentResized");
 
 				// set our size to be the same as our parent container
 				Component comp = e.getComponent();
-				if(comp instanceof JPanel) {
-					JPanel pnl = (JPanel)comp;
+				if (comp instanceof JPanel)
+				{
+					JPanel pnl = (JPanel) comp;
+					// get current size of parent container (because it may have been resized)
+					Container parent = pnl.getParent();
+					int width = parent.getWidth();
+					int height = parent.getHeight();
 					pnl.setSize(width, height);
 					redrawBuffer();
-				}				
+				}
 			}
 
 			@Override
@@ -52,30 +53,29 @@ public class CenterShapesBufferedPanel extends JPanel
 			public void componentMoved(ComponentEvent e)
 			{
 				// DON'T CARE
-
 			}
 
 			@Override
 			public void componentShown(ComponentEvent e)
 			{
 				// DON'T CARE
-
 			}
 		});
 	}
-	
+
 	private void redrawBuffer()
 	{
 		Container parent = getParent();
-		if(parent == null) {
-			System.out.println("redrawBuffer: getParent() returned null");
+		if (parent == null)
+		{
+			//System.out.println("redrawBuffer: getParent() returned null");
 			return;
 		}
 		int x = parent.getX();
 		int y = parent.getY();
 		int width = parent.getWidth();
 		int height = parent.getHeight();
-		
+
 		bufImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		bufGraphics = bufImage.createGraphics();
 
@@ -98,7 +98,7 @@ public class CenterShapesBufferedPanel extends JPanel
 	protected void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-		//System.out.println("paintComponent");
+		// System.out.println("paintComponent");
 		g.drawImage(bufImage, 0, 0, getWidth(), getHeight(), null);
 
 	}
