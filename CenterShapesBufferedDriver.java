@@ -18,6 +18,7 @@ public class CenterShapesBufferedDriver
 		
 		// center the JFrame on the current device
 		frame.setLocationRelativeTo(null); 
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setContentPane(new CenterShapesBufferedPanel());
 		frame.setVisible(true);

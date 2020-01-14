@@ -4,10 +4,13 @@ import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.awt.image.BufferedImage;
 
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class CenterShapesBufferedPanel extends JPanel
 {
@@ -28,7 +31,7 @@ public class CenterShapesBufferedPanel extends JPanel
 			@Override
 			public void componentResized(ComponentEvent e)
 			{
-				// System.out.println("componentResized");
+//				 System.out.println("componentResized");
 
 				// set our size to be the same as our parent container
 				Component comp = e.getComponent();
@@ -39,6 +42,7 @@ public class CenterShapesBufferedPanel extends JPanel
 					Container parent = pnl.getParent();
 					int width = parent.getWidth();
 					int height = parent.getHeight();
+					// resize the JPanel to the same size as the parent JFrame
 					pnl.setSize(width, height);
 					redrawBuffer();
 				}
