@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c029c193-9f8f-4b28-bec7-2b51469a1608" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CenterShapesBufferedPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CenterShapesBufferedPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,6 @@
       <updated>1578969512331</updated>
       <workItem from="1578969516014" duration="970000" />
       <workItem from="1579918679645" duration="172000" />
-      <workItem from="1579918867706" duration="42000" />
     </task>
     <servers />
   </component>

@@ -96,7 +96,6 @@ public class CenterShapesBufferedPanel extends JPanel
 	 * 
 	 * @param width - width of the shape
 	 * @param height - height of the shape
-	 * @param g - Graphics object we are drawing on
 	 */
 	public void fillOvalCentered(int width, int height)
 	{
